@@ -1,4 +1,13 @@
-
-<h1>Welcome Aaron</h1>
-<p>Do something <a href="http://google.com">google</a></p>
-<p>Do something <%= link_to "yahoo", "http://yahoo.com"%></p>
+<div class="jumbotron center">
+	<h1>Keep going Aaron!</h1>
+	
+	<% if user_signed_in? %>
+		# doxx
+	<% else %>
+	
+	<p>
+		<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+		<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	</p>
+	<% end %>
+</div>
