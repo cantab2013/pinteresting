@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#home'
   get 'about' => 'pages#about' # Creates about_path
-  get 'home' => 'pages#home' # Creates home_path
+  get 'features' => 'pages#home'
+  get 'cashfund' => 'pages#cashfund'
+  get 'smartfund' => 'pages#smartfund'
+  get 'faq' => 'pages#faq'
+  get 'security' => 'pages#security'
+  get 'blog' => 'pages#blog'
+  get 'buyplato' => 'pages#buyplato'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

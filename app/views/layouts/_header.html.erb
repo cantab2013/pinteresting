@@ -1,39 +1,56 @@
-<nav class="navbar navbar-default" role="navigation">
+
+<nav class="navbar navbar-default" role="navigation" style="background-color: #2c3e50; height: 100px; font-family: Palatino">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Fund Plato", root_path, class: "navbar-brand" %>
+    <div class="navbar-header" style="margin: 40px 0px 0px 40px">
+      <a style="font-size: 40px; color: white">Fund Plato</a>
+       
+  <!--Include logo? <img width='50px' height='50px' src="/assets/logo.png" /> -->
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
+      <ul class="nav navbar-nav navbar-right" style="color: white">
+        <li><%= link_to "Features", features_path %></li>
+        <li><%= link_to "CashFund™", cashfund_path %></li>
+        <li><%= link_to "SmartFund™", smartfund_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Buy Plato</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><%= link_to "Buy Plato", buyplato_path %></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "FAQ", faq_path %></li>
+            <li><%= link_to "Security", security_path %></li>
+            <li><%= link_to "Blog", blog_path %></li>
           </ul>
         </li>
-        <% if user_signed_in? %>
-          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign In", new_user_session_path %>
-        <% end %>      
-      </ul>
+      </ul>  
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+<div class="container-fluid" style="background-color: #B0E0E6; height: 50px; width: 100%; font-family: Palatino; border-radius: 0px; margin-top: -20px">
+ 
+      <div style="margin: 5px 0px 0px 40px; color: black">
+        <div style="display:inline">
+          <% if user_signed_in? %>
+            <%= link_to "Edit Setting", edit_user_registration_path, class: "btn btn-default" %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path, class: "btn btn-default" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>     
+          <% end %>  
+        </div>
+        <div style="display:inline; margin-left: 720px">
+          <%= link_to "Buy More Plato", buyplato_path, class: "btn btn-primary" %>
+        </div>
+        <div class="dropdown" style="display:inline; font-size: 16px; font-weight: bold; margin-left: 20px; margin-top: 20px">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black; align: right; text-decoration: none">Current Plato Wallet Balance -- p$35,800<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>Current CashFund Balance -- p$25,000 ($p=$)</li>
+            <li>Current SmartFund Balance -- p$10,000 ($p=$)</li>
+          </ul>
+        </div>
+      </div>  
+</div><!-- /.container-fluid -->
